@@ -27,40 +27,54 @@ These points create the shape triangle `ABC`
 (it doesn't have to be equilateral but it will be for
 illustrative purposes). There is also a 4th point labeled
 `TP`; this will be our start point / trace point.
+
+
 ![Starting graph with Trace Point](./readme_images/1_start.png)
 
 
 Now imagine we have a single 6-sided die. We will assign 2 values from the die per triangle point in our graph. `A = [1, 2]`, `B = [3, 4]`,
 `C = [5, 6]`.
+
+
 ![Starting graph with die value assignment](./readme_images/2_dice.png)
 
 #### First Roll
 We roll the die and get a value of 2. The value 2 is associated with point `A`. We find the distance between our current Trace Point `TP`
 and point `A` and multiply that distance by 0.5[^1]—
 
+
 [^1]: This is known as the dividing rate. For more information on how this value was derived [click here](https://computational-discovery-on-jupyter.github.io/Computational-Discovery-on-Jupyter/Contents/chaos-game-representation.html#sec-generalization).
 
 ![First roll is 2, associated with point A](./readme_images/3_first_selection.png)
+
+
 —And plot a new point. This new point will be our new `TP` point.
+
+
 ![Reassign TP to new point between original TP and point A](./readme_images/4_first_move.png)
 
 #### Second Roll
 For our second roll, we get a value of 4, which is associated with point `B`. We find the distance between our newly assigned trace point `TP` and `B`, and then multiply that distance by the dividing rate of 0.5 (also referred to as the `ratio` or `multiplier` in my code).
 
+
 ![Second roll is 4, associated with point B](./readme_images/5_second_selection.png)
 
+
 We then plot a point between `TP` and `B` and assign it as our new trace point `TP`.
+
 
 ![Reassign TP to new point between current TP and point B](./readme_images/6_second_move.png)
 
 #### Third Roll
 Our third roll is 3 which is also associated with point `B`. Similarly to before, we find the distance between our current trace point `TP` and `B`, we then multiply that distance by the dividing rate and plot/assign our new trace point `TP`.
 
+
 ![Third roll is 3, associated with point B again](./readme_images/7_third_selection.png)
 ![Reassign TP to new point between current TP and point B again](./readme_images/8_third_move.png)
 
 #### Fourth Roll
 Our fourth and final illustrative roll is 6 which is associated with point `C` (what a surprise!). We find the distance between our current trace point `TP` and `C`, we then multiply that distance by the dividing rate and plot/assign our new trace point `TP`.
+
 
 ![Fourth roll is 6, associated with point C](./readme_images/9_fourth_selection.png)
 ![Reassign TP to new point between current TP and point C](./readme_images/10_fourth_move.png)
@@ -69,15 +83,23 @@ Our fourth and final illustrative roll is 6 which is associated with point `C` (
 So why are we doing this? Mathematicians have found that if we repeat this random selection between points enough times we can get some interesting images. Specifically: Fractals.
 
 If we were to continue to roll our die 100 times we would get something similar to the following image:
+
+
 ![Graph after rolling die 100 times](./readme_images/11_n100.png)
 
 Rolling our die 500 times would yield:
+
+
 ![Graph after rolling die 500 times](./readme_images/12_n500.png)
 
 2000 rolls:
+
+
 ![Graph after rolling die 2000 times](./readme_images/13_n2000.png)
 
 And finally, 15,000 die rolls would give us the below image:
+
+
 ![Graph after rolling die 15000 times](./readme_images/14_n15000.png)
 
 ### Modifications to the Chaos Game
